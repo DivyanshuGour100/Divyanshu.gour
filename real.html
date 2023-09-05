@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Color Change
+        </title>
+    
+    <link rel="stylesheet" href="style.css">    
+    </head>
+
+ <body>
+    
+    <section>
+        <h1>Color Change by Divyanshu <hr></h1>
+        <div class="box">
+            <span class="btn" id="grey"></span>
+            <span class="btn" id="red"></span>
+            <span class="btn" id="yellow"></span>
+            <span class="btn" id="pink"></span>
+            
+
+        </div>
+
+        <div class="box-2">
+            <span class="btn" id="oraange"></span>
+            <span class="btn" id="blue"></span>
+
+
+        </div>
+    </section>
+
+<script>
+ const button =document.querySelectorAll(".btn")
+const body = document.querySelector("body")
+
+button.forEach(function(button){
+    button.addEventListener("click",function(e){
+        setCookie('color',e.target.id,15000);
+        if(e.target.id ===  "grey"){
+            body.style.backgroundColor = "grey"
+        }
+        if(e.target.id ===  "red"){
+            body.style.backgroundColor = "red"
+        }
+        if(e.target.id ===  "yellow"){
+            body.style.backgroundColor = "yellow"
+        }
+        if(e.target.id ===  "pink"){
+            body.style.backgroundColor = "pink"
+        }
+        if(e.target.id ===  "oraange"){
+            body.style.backgroundColor = "orange"
+        }
+        if(e.target.id ===  "blue"){
+            body.style.backgroundColor = "blue"
+        }
+    })
+})
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+
+</script>
+ </body>   
+</html>
